@@ -41,6 +41,9 @@
   <ItemGroup>
     <Compile Include="AlwaysFalseChecker.cs" />
     <Compile Include="Feature.cs" />
+    <Compile Include="Multimap.cs" />
+    <Compile Include="PercentagePassChecker.cs" />
+    <Compile Include="PerFeatureChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

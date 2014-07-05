@@ -2,7 +2,7 @@ namespace Features
 {
     public class AlwaysFalseChecker : FeatureChecker
     {
-        public bool check(Feature feature)
+        public bool Check(Feature feature)
         {
             return false;
         }

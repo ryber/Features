@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FeaturesTest.cs" />
+    <Compile Include="MockChecker.cs" />
+    <Compile Include="PercentagePassCheckerTest.cs" />
+    <Compile Include="PerFeatureCheckerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,10 +1,4 @@
-﻿ using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Features
+﻿namespace Features
 {
     public enum Feature
     {
@@ -15,7 +9,7 @@ namespace Features
 
     public interface FeatureChecker
     {
-        bool check(Feature feature);
+        bool Check(Feature feature);
     }
 
     public static class FeatureCheckFactory
@@ -29,7 +23,7 @@ namespace Features
 
         public static bool IsEnabled(this Feature feature)
         {
-            return Checker.check(feature);
+            return Checker.Check(feature);
         }
 
         public static void Reset()
