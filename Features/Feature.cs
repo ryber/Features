@@ -27,7 +27,7 @@ namespace Features
             Reset();
         }
 
-        public static bool isEnabled(this Feature feature)
+        public static bool IsEnabled(this Feature feature)
         {
             return Checker.check(feature);
         }
