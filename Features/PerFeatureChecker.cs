@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Features
 {
-    public class PerFeatureChecker : FeatureChecker
+    public class PerFeatureChecker : IFeatureChecker
     {
-        private readonly Multimap<Feature, FeatureChecker> _checkers = new Multimap<Feature, FeatureChecker>();
+        private readonly Multimap<Feature, IFeatureChecker> _checkers = new Multimap<Feature, IFeatureChecker>();
 
-        public void Add(Feature feature, FeatureChecker featureChecker)
+        public void Add(Feature feature, IFeatureChecker featureChecker)
         {
             _checkers.Add(feature, featureChecker);
         }
 
-        public bool Check(Feature feature)
+        public bool Check(Feature feature, IFeatureUser user)
         {
             if (_checkers.ContainsKey(feature))
             {
-                return _checkers[feature].Any(c => c.Check(feature));
+                return _checkers[feature].Any(c => c.Check(feature, user));
             }
             return false;
         }

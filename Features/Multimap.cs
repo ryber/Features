@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Features
 {
@@ -11,10 +7,10 @@ namespace Features
         public void Add(TKey key, TValue value)
         {
             IList<TValue> values;
-            if (!this.TryGetValue(key, out values))
+            if (!TryGetValue(key, out values))
             {
                 values = new List<TValue>();
-                this.Add(key, values);
+                Add(key, values);
             }
             values.Add(value);
         }

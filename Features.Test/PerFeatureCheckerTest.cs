@@ -27,7 +27,7 @@ namespace Features.Test
             _pfc.Add(Feature.Doughnuts, doughnutchecker);
             _pfc.Add(Feature.TimeTravel, timeChecker);
 
-            _pfc.Check(Feature.Doughnuts);
+            _pfc.Check(Feature.Doughnuts, null);
             Assert.AreEqual(Feature.Doughnuts, doughnutchecker.Checked);
             Assert.AreEqual(1, doughnutchecker.CheckCount);
             Assert.AreEqual(0, timeChecker.CheckCount);
@@ -36,7 +36,7 @@ namespace Features.Test
         [Test]
         public void IfFeatureDoesNotHaveACheckerReturnFalse()
         {
-            Assert.False(_pfc.Check(Feature.Doughnuts));
+            Assert.False(_pfc.Check(Feature.Doughnuts, null));
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace Features.Test
             _pfc.Add(Feature.Doughnuts, check1);
             _pfc.Add(Feature.Doughnuts, check2);
 
-            Assert.False(_pfc.Check(Feature.Doughnuts));
+            Assert.False(_pfc.Check(Feature.Doughnuts, null));
 
             Assert.AreEqual(Feature.Doughnuts, check1.Checked);
             Assert.AreEqual(Feature.Doughnuts, check2.Checked);
@@ -63,7 +63,7 @@ namespace Features.Test
             _pfc.Add(Feature.Doughnuts, new MockChecker(true));
             _pfc.Add(Feature.Doughnuts, new MockChecker(false));
 
-            Assert.True(_pfc.Check(Feature.Doughnuts));
+            Assert.True(_pfc.Check(Feature.Doughnuts, null));
         }
     }
 }

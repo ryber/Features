@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Features
 {
-    public class PercentagePassChecker : FeatureChecker
+    public class PercentagePassChecker : IFeatureChecker
     {
         private readonly int _percent;
         private readonly Random _d100;
@@ -19,9 +19,9 @@ namespace Features
             _d100 = d100;
         }
 
-        public bool Check(Feature feature)
+        public bool Check(Feature feature, IFeatureUser user)
         {
-            return _d100.Next(1, 100) <= _percent;
+            return _d100.Next(0, 99) < _percent;
         }
     }
 }

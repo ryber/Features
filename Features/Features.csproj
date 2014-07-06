@@ -40,11 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlwaysFalseChecker.cs" />
+    <Compile Include="CountryChecker.cs" />
     <Compile Include="Feature.cs" />
+    <Compile Include="FeatureCheckFactory.cs" />
+    <Compile Include="FeatureUser.cs" />
+    <Compile Include="IAppContext.cs" />
+    <Compile Include="IFeatureChecker.cs" />
     <Compile Include="Multimap.cs" />
     <Compile Include="PercentagePassChecker.cs" />
     <Compile Include="PerFeatureChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnknownUser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

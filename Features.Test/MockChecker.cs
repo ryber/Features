@@ -1,6 +1,6 @@
 ﻿namespace Features.Test
 {
-    public class MockChecker : FeatureChecker
+    public class MockChecker : IFeatureChecker
     {
         private readonly bool _passed;
 
@@ -11,7 +11,7 @@
 
         public MockChecker():this(true){}
 
-        public bool Check(Feature feature)
+        public bool Check(Feature feature, IFeatureUser user)
         {
             this.CheckCount++;
             this.Checked = feature;
